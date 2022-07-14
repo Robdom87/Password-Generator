@@ -12,11 +12,41 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var length = passwordLength ();
-  var types = passwordCharTypes ();
-// include recursive function to the length of the password
-//random number generator to figure out the character to for each bit of the string
-  return ; //return the full password
+  let length = passwordLength ();
+  let passString = "";
+  var newChar = "";
+
+  // forloop to the length of the password
+  for (let i = 0; i < length; i++) {
+    newChar = newCharacter ();
+    passString = passString + newChar;
+  }
+
+  return passString; //return the full password
+}
+
+function newCharacter(){
+  let types = passwordCharTypes ();
+  
+
+  //random number generator to figure out the character to for each bit of the string
+
+}
+
+function upperCharacter() {
+
+}
+
+function lowerCharacter() {
+  
+}
+
+function numericCharacter() {
+  
+}
+
+function specialCharacter() {
+  
 }
 
 function passwordLength(){
