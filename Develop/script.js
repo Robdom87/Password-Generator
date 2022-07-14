@@ -33,13 +33,55 @@ function passwordLength(){
 
 function passwordCharTypes(){
   //send alert that atleast one should be selected.
+  alert("Next, we will select the character types to include in the password.\nNOTICE: atleast one character type should be selected.");
   //send confirm box for lowercase, uppercase, numeric, special characters
-  //mention that atleast one will be selected
   //and click cancel to exclude the character type
+  let upper = confirm("Include UPPERCASE characters in password?\nClick cancel to exclude character type.");
+  let lower = confirm("Include LOWERCASE characters in password?\nClick cancel to exclude character type.");
+  let numeric = confirm("Include NUMERIC characters in password?\nClick cancel to exclude character type.");
+  let special = confirm("Include SPECIAL characters in password?\nClick cancel to exclude character type.");
+
   //confirm that atleast one was selected
   //if not add prompt, to see if they want to try again
-  //return booleans for true or false of each character type
-  return;
+  while (upper === false && lower === false && numeric === false && special === false) {
+    alert("NOTICE: Atleast one character type should be selected.");
+    upper = confirm("Include UPPERCASE characters in password?\nClick cancel to exclude character type.");
+    lower = confirm("Include LOWERCASE characters in password?\nClick cancel to exclude character type.");
+    numeric = confirm("Include NUMERIC characters in password?\nClick cancel to exclude character type.");
+    special = confirm("Include SPECIAL characters in password?\nClick cancel to exclude character type.");
+  }
+  
+  //return booleans for true or false of each character type, convert to 0 and 1's
+  let aggTypes = "";
+  if (upper=== true){
+    aggTypes = aggTypes + "1";
+  }
+  else {
+    aggTypes = aggTypes + "0";
+  }
+
+  if (lower=== true){
+    aggTypes = aggTypes + "1";
+  }
+  else {
+    aggTypes = aggTypes + "0";
+  }
+
+  if (numeric=== true){
+    aggTypes = aggTypes + "1";
+  }
+  else {
+    aggTypes = aggTypes + "0";
+  }
+
+  if (special=== true){
+    aggTypes = aggTypes + "1";
+  }
+  else {
+    aggTypes = aggTypes + "0";
+  }
+  
+  return aggTypes;
 }
 
 // Add event listener to generate button
