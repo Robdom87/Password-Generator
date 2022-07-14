@@ -21,12 +21,18 @@ function generatePassword() {
 
 function passwordLength(){
   //creates prompt where password length is asked for
-  //validate if between 8 - 128
-  //if failed, reprompt with mention on the criteria
+  let inputLen = prompt("Input desired password length.\nMust be at least 8 characters long. and no more than 128 characters long.", "8");
+  //validate if between 8 - 128, reprompt until meets criteria
+  while (inputLen < 8 || inputLen > 128) {
+    inputLen = prompt("Input desired password length.\nMust be at least 8 characters long. and no more than 128 characters long.", "8");
+  } 
   //return password length when validated
+  return inputLen;
+  
 }
 
 function passwordCharTypes(){
+  //send alert that atleast one should be selected.
   //send confirm box for lowercase, uppercase, numeric, special characters
   //mention that atleast one will be selected
   //and click cancel to exclude the character type
