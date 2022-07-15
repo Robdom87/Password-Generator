@@ -67,31 +67,60 @@ function newCharacter(type) {
       nuevo = specialCharacter();
     }
   }
-  console.log(nuevo);
   return nuevo;
 }
 
 //outputs random uppercase character
 function upperCharacter() {
-  let uL = "a";
+  let uL = 'A';
+  var index = 0;
+  let random = Math.floor(Math.random() * 26);
+  uL = uL.charCodeAt(0) + random;
+  uL = String.fromCharCode(uL);
   return uL;
 }
 
 //outputs random lowercase character
 function lowerCharacter() {
-  let lL = "b";
+  let lL = 'a';
+  var index = 0;
+  let random = Math.floor(Math.random() * 26);
+  lL = lL.charCodeAt(0) + random;
+  lL = String.fromCharCode(lL);
+  
   return lL;
 }
 
 //outputs random numeric character
 function numericCharacter() {
-  let nC = "c";
+  let nC = '0';
+  var index = 0;
+  let random = Math.floor(Math.random() * 10);
+  nC = nC.charCodeAt(0) + random;
+  nC = String.fromCharCode(nC);
+  
   return nC;
 }
 
 //outputs random special character
 function specialCharacter() {
-  let sC = "d";
+  let sC = "!";
+  var index = 0;
+  let random = Math.floor(Math.random() * 33);
+
+  // account for spacing between special characters
+  if (random > 27) {
+    random = random + 10 + 26 + 26;
+  } else if (random > 21) {
+    random = random + 10 + 26;
+  } else if (random > 14) {
+    random = random + 10;
+  } else {
+    random = random;
+  }
+
+  sC = sC.charCodeAt(0) + random;
+  sC = String.fromCharCode(sC);
   return sC;
 }
 
