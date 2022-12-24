@@ -6,7 +6,7 @@ The password generator helps the user create randomized passwords. The site cons
 
 ## Deployed Link
 
-https://robdom87.github.io/challenge-3-Password-Generator/
+https://robdom87.github.io/Password-Generator/
 
 ## Screenshot
 
